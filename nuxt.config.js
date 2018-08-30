@@ -11,8 +11,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
   },
+  css: ['~assets/css/reset.css', '~assets/css/main.css'],
   /*
   ** Customize the progress bar color
   */
@@ -35,4 +36,16 @@ module.exports = {
       }
     }
   },
-}
+
+  modules: [
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faWeibo', 'faGithub']
+        }
+      ]
+    }]
+  ],
+};
