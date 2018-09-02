@@ -1,18 +1,23 @@
 <template>
-  <section class="container">
-    <h1>Blog</h1>
+  <div class="cocoa-content">
+    <div class="page-heading">Latest Posts</div>
     <ul>
-      <li v-for="(article, index) in articles" :key="index">
-        <nuxt-link :to="{ name: 'articles-id', params: { id: article.uid } }">{{ article.title }}</nuxt-link>
+      <li v-for="(article, index) in articles" :key="index" class="cocoa-post-item">
+        <span class="cocoa-meta">
+          <time :datetime="article.created_time">{{ article.created_time | moment().format("ll") }}</time>
+        </span>
+        <nuxt-link :to="{ name: 'articles-id', params: { id: article.uid } }">
+          <span>{{ article.title }}</span>
+        </nuxt-link>
       </li>
     </ul>
-    <ul>
-      <li v-for="(tag, index) in tags" :key="index">
-        <nuxt-link :to="{ name: 'tags-id', params: { name: tag.name } }">{{ tag.name }}</nuxt-link>
-      </li>
-    </ul>
-    <p><nuxt-link to="/">Home</nuxt-link></p>
-  </section>
+    <!--<ul>-->
+      <!--<li v-for="(tag, index) in tags" :key="index">-->
+        <!--<nuxt-link :to="{ name: 'tags-id', params: { name: tag.name } }">{{ tag.name }}</nuxt-link>-->
+      <!--</li>-->
+    <!--</ul>-->
+    <!--<p><nuxt-link to="/">Home</nuxt-link></p>-->
+  </div>
 </template>
 
 <script>
@@ -40,7 +45,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;

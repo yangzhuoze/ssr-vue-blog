@@ -16,9 +16,12 @@
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
     "@nuxtjs/dotenv": "^1.1.1",
+    "ajv": "^6.5.3",
     "axios": "^0.18.0",
+    "moment": "^2.22.2",
     "nuxt": "^1.0.0",
-    "nuxt-fontawesome": "^0.3.0"
+    "nuxt-fontawesome": "^0.3.0",
+    "vue-moment-lib": "^1.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

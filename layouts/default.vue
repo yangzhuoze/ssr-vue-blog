@@ -4,7 +4,7 @@
       <div class="cocoa-container">
         <div class="cocoa-content">
           <a href="https://themes.gohugo.io/theme/cocoa/">
-          <!--<img class="avatar" src="./Arthur Dent_files/profile.png" srcset="https://themes.gohugo.io/theme/cocoa/img/profile.png 1x,https://themes.gohugo.io/theme/cocoa/img/profile-2x.png 2x,https://themes.gohugo.io/theme/cocoa/img/profile-3x.png 3x,https://themes.gohugo.io/theme/cocoa/img/profile-4x.png 4x">-->
+            <img class="avatar" src="/favicon.ico">
           </a>
           <a href="https://themes.gohugo.io/theme/cocoa/">
             <div class="cocoa-name">Arthur Dent</div>
@@ -22,38 +22,33 @@
     <section class="cocoa-icons">
       <div class="cocoa-container">
         <div class="cocoa-content">
-          <a href="https://github.com/you" target="_blank" rel="noopener">
-            <i class="fab fa-weibo"></i>asasas
-          </a>
-          <a href="https://twitter.com/you" target="_blank" rel="noopener">
-            <font-awesome-icon icon="dollar-sign" />
-          </a>
           <a href="https://example.com/@you" target="_blank" rel="noopener">
-            <fa :icon="['fab', 'github']"/>
+            <fa :icon="['fab', 'github']" class="cocoa-icon"/>
           </a>
           <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
-            <fa :icon="['fab', 'weibo']"/>
+            <fa :icon="['fab', 'weibo']" class="cocoa-icon"/>
           </a>
-          <a href="https://instagram.com/you" target="_blank" rel="noopener">
-            <i class="fab fa-weibo"></i>
+          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+            <fa :icon="['fab', 'zhihu']" class="cocoa-icon"/>
           </a>
-          <a href="https://500px.com/username" target="_blank" rel="noopener">
-            <i class="fab fa-weibo"></i>
+          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+            <fa :icon="['fab', 'facebook']" class="cocoa-icon"/>
           </a>
-          <a href="mailto:you@example.space">
-            <i class="fab fa-weibo"></i>
+          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+            <fa :icon="['fab', 'linkedin']" class="cocoa-icon"/>
           </a>
-          <a href="https://themes.gohugo.io/theme/cocoa/index.xml">
-            <i class="fab fa-weibo"></i>
+          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+            <fa :icon="['fab', 'stack-overflow']" class="cocoa-icon"/>
+          </a>
+          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+            <fa :icon="['fab', 'twitter']" class="cocoa-icon"/>
           </a>
         </div>
       </div>
     </section>
     <section class="cocoa-main">
       <div class="cocoa-container">
-        <div class="cocoa-content">
-          <nuxt/>
-        </div>
+        <nuxt/>
       </div>
     </section>
   </div>
@@ -104,4 +99,6 @@
     color: #fff;
     background-color: #35495e;
   }
+
+
 </style>

@@ -13,7 +13,11 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
   },
-  css: ['~assets/css/reset.css', '~assets/css/main.css'],
+  css: [
+    '~assets/css/default.min.css',
+    '~assets/css/reset.css',
+    '~assets/css/main.css'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -34,7 +38,11 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+
+    vendor: [
+      'axios'
+    ],
   },
 
   modules: [
@@ -43,9 +51,12 @@ module.exports = {
       imports: [
         {
           set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faWeibo', 'faGithub']
+          icons: ['faWeibo', 'faGithub', 'faZhihu', 'faFacebook', 'faLinkedin', 'faStackOverflow', 'faTwitter']
         }
       ]
     }]
   ],
+  plugins: [
+    { src: '~/plugins/vue-moment-lib', ssr: false }
+  ]
 };
