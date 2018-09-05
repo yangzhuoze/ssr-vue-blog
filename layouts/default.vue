@@ -7,7 +7,7 @@
             <img class="avatar" src="/favicon.ico">
           </a>
           <a href="https://themes.gohugo.io/theme/cocoa/">
-            <div class="cocoa-name">Arthur Dent</div>
+            <div class="cocoa-name">{{ config.BLOG_TITLE }}</div>
           </a>
           <nav>
             <ul>
@@ -22,26 +22,17 @@
     <section class="cocoa-icons">
       <div class="cocoa-container">
         <div class="cocoa-content">
-          <a href="https://example.com/@you" target="_blank" rel="noopener">
+          <a href="https://github.com/yangzhuoze" target="_blank" rel="noopener">
             <fa :icon="['fab', 'github']" class="cocoa-icon"/>
           </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+          <a href="https://weibo.com/chozeyeung" target="_blank" rel="noopener">
             <fa :icon="['fab', 'weibo']" class="cocoa-icon"/>
           </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+          <a href="https://www.zhihu.com/people/chozeyeung" target="_blank" rel="noopener">
             <fa :icon="['fab', 'zhihu']" class="cocoa-icon"/>
           </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
-            <fa :icon="['fab', 'facebook']" class="cocoa-icon"/>
-          </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
-            <fa :icon="['fab', 'linkedin']" class="cocoa-icon"/>
-          </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
+          <a href="https://stackoverflow.com/users/6340744" target="_blank" rel="noopener">
             <fa :icon="['fab', 'stack-overflow']" class="cocoa-icon"/>
-          </a>
-          <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">
-            <fa :icon="['fab', 'twitter']" class="cocoa-icon"/>
           </a>
         </div>
       </div>
@@ -53,7 +44,15 @@
     </section>
   </div>
 </template>
-
+<script>
+  export default {
+    data() {
+      return {
+        config: this.$store.state.config
+      }
+    }
+  }
+</script>
 <style>
   html {
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:8000/blog'
+  },
   /*
   ** Headers of the page
   */
@@ -51,12 +54,12 @@ module.exports = {
       imports: [
         {
           set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faWeibo', 'faGithub', 'faZhihu', 'faFacebook', 'faLinkedin', 'faStackOverflow', 'faTwitter']
+          icons: ['faWeibo', 'faGithub', 'faZhihu', 'faStackOverflow']
         }
       ]
     }]
   ],
   plugins: [
-    { src: '~/plugins/vue-moment-lib', ssr: false }
+    '~/plugins/vue-moment-lib'
   ]
 };
