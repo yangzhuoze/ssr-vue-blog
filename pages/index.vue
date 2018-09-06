@@ -11,27 +11,17 @@
         </nuxt-link>
       </li>
     </ul>
-    <!--<ul>-->
-      <!--<li v-for="(tag, index) in tags" :key="index">-->
-        <!--<nuxt-link :to="{ name: 'tags-id', params: { name: tag.name } }">{{ tag.name }}</nuxt-link>-->
-      <!--</li>-->
-    <!--</ul>-->
-    <!--<p><nuxt-link to="/">Home</nuxt-link></p>-->
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  async asyncData({ query, error }) {
-    let tags_res = await axios.get('http://127.0.0.1:8000/blog/tags/')
-    let articles_res = await axios.get('http://127.0.0.1:8000/blog/articles/')
+  async asyncData({ store, route, error}) {
+    const data = await store.dispatch('ARTICLE_LIST')
     return {
-      tags: tags_res.data,
-      articles: articles_res.data
+      articles: data || {}
     }
-  }
+  },
 }
 </script>
 
