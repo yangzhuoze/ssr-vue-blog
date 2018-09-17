@@ -1,6 +1,5 @@
 module.exports = {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:8000/blog'
   },
   /*
   ** Headers of the page
@@ -41,14 +40,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-
-    vendor: [
-      'axios'
-    ],
+    }
   },
 
   modules: [
+    ['@nuxtjs/axios', {
+      baseURL: 'http://localhost:8000/blog/'
+    }],
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -59,7 +57,8 @@ module.exports = {
       ]
     }]
   ],
+
   plugins: [
     '~/plugins/vue-moment-lib'
-  ]
+  ],
 };

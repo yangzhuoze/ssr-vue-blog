@@ -4,7 +4,7 @@
       <div class="cocoa-container">
         <div class="cocoa-content">
           <a href="https://themes.gohugo.io/theme/cocoa/">
-            <img class="avatar" src="/favicon.ico">
+            <img class="avatar" :src="config.BLOG_AVATOR">
           </a>
           <a href="https://themes.gohugo.io/theme/cocoa/">
             <div class="cocoa-name">{{ config.BLOG_TITLE }}</div>

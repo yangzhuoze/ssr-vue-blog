@@ -6,7 +6,8 @@
         <span class="cocoa-meta">
           <time :datetime="article.created_time">{{ article.created_time | moment().format("ll") }}</time>
         </span>
-        <nuxt-link :to="{ name: 'articles-id', params: { id: article.uid } }">
+        <!--<nuxt-link :to="{ name: 'articles-id', params: { id: article.uid } }">-->
+        <nuxt-link :to="'/articles/' + article.uid">
           <span>{{ article.title }}</span>
         </nuxt-link>
       </li>

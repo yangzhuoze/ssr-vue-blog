@@ -1,72 +1,70 @@
-import axios from 'axios'
-
 export default {
-  async nuxtServerInit({ dispatch, commit, getters}, { req, res }) {
-    const { data } = await axios.get(`${getters.baseUrl}/configs`)
+  async nuxtServerInit({ dispatch, commit}, { app }) {
+    const data = await app.$axios.$get(`configs`)
     commit('SET_CONFIG', data)
   },
 
-  async ARTICLE_LIST({ commit, state, getters }) {
-    const { data } = await axios.get(`${getters.baseUrl}/articles`)
+  async ARTICLE_LIST({ commit, state }) {
+    const data  = await this.$axios.$get(`articles/`)
     return data
   },
 
-  async ARTICLE_CERATE({ commit, state, getters }, params) {
-    const { data } = await axios.post(`${getters.baseUrl}/articles`, params)
+  async ARTICLE_CERATE({ commit, state }, params) {
+    const data  = await this.$axios.$post(`articles/`, params)
     return data
   },
 
-  async ARTICLE_DETAIL({ commit, state, getters }, id) {
-    const { data } = await axios.get(`${getters.baseUrl}/articles/${id}`)
+  async ARTICLE_DETAIL({ commit, state }, id) {
+    const data  = await this.$axios.$get(`articles/${id}/`)
     return data
   },
 
-  async ARTICLE_UPDATE({ commit, state, getters }, params) {
+  async ARTICLE_UPDATE({ commit, state }, params) {
     let id = params.id
-    const {data} = await axios.put(`${getters.baseUrl}/articles/${id}`, params)
+    const data  = await this.$axios.$put(`articles/${id}/`, params)
     return data
   },
 
-  async ARTICLE_PARTIAL_UPDATE({ commit, state, getters}, params) {
+  async ARTICLE_PARTIAL_UPDATE({ commit, state}, params) {
     let id = params.id
-    const { data } = await axios.patch(`${getters.baseUrl}/articles/${id}`, params)
+    const data  = await this.$axios.$patch(`articles/${id}/`, params)
     return data
   },
 
-  async ARTICLE_DELETE({ commit, state, getters}, id) {
-    const { data } = await axios.delete(`${getters.baseUrl}/articles/${id}`)
+  async ARTICLE_DELETE({ commit, state}, id) {
+    const data  = await this.$axios.$delete(`articles/${id}/`)
     return data;
   },
 
-  async TAGS({ commit, state, getters }) {
-    const { data } = await axios.get(`${getters.baseUrl}/tags`)
+  async TAGS({ commit, state }) {
+    const data  = await this.$axios.$get(`tags/`)
     return data
   },
 
-  async TAG_CREATE({ commit, state, getters }, params) {
-    const { data } = await axios.post(`${getters.baseUrl}/tags`, params)
+  async TAG_CREATE({ commit, state }, params) {
+    const data  = await this.$axios.$post(`tags/`, params)
     return data
   },
 
-  async TAG_DETAIL({ commit, state, getters }, id) {
-    const { data } = await axios.get(`${getters.baseUrl}/tag/${id}`)
+  async TAG_DETAIL({ commit, state }, id) {
+    const data  = await this.$axios.$get(`tag/${id}/`)
     return data
   },
 
-  async TAG_UPDATE({ commit, state, getters }, params) {
+  async TAG_UPDATE({ commit, state }, params) {
     let id = params.id
-    const { data } = await axios.put(`${getters.baseUrl}/tags/${id}`, params)
+    const data  = await this.$axios.$put(`tags/${id}/`, params)
     return data
   },
 
-  async TAG_PARTIAL_UPDATE({ commit, state, getters }, params) {
+  async TAG_PARTIAL_UPDATE({ commit, state }, params) {
     let id = params.id
-    const { data } = await axios.patch(`${getters.baseUrl}/tags/${id}`, params)
+    const data  = await this.$axios.$patch(`tags/${id}/`, params)
     return data
   },
 
-  async TAG_DELETE({ commit, state, getters }, id) {
-    const { data } = await axios.delete(`${getters.baseUrl}/tags/${id}`)
+  async TAG_DELETE({ commit, state }, id) {
+    const data  = await this.$axios.$delete(`tags/${id}/`)
     return data
   }
 }

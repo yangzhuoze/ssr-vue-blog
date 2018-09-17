@@ -21,16 +21,22 @@
 </template>
 
 <script>
-  import axios from 'axios'
-
-  export default {
-    async asyncData({params}) {
-      let {data} = await axios.get(`http://127.0.0.1:8000/blog/articles/${params.id}/`)
-      return {
-        article: data
-      }
+export default {
+  async asyncData({ store, route, error}) {
+    let id = route.params.id || ''
+    const data = await store.dispatch('ARTICLE_DETAIL', id)
+    if (!id) {
+      error({
+        message: 'This page could not be found',
+        statusCode: 404
+      })
+      return false
+    }
+    return {
+      article: data || {}
     }
   }
+}
 </script>
 
 <style scoped>
