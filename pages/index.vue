@@ -7,7 +7,7 @@
           <time :datetime="article.created_time">{{ article.created_time | moment().format("ll") }}</time>
         </span>
         <!--<nuxt-link :to="{ name: 'articles-id', params: { id: article.uid } }">-->
-        <nuxt-link :to="'/articles/' + article.uid">
+        <nuxt-link :to="'articles/' + article.uid">
           <span>{{ article.title }}</span>
         </nuxt-link>
       </li>
@@ -17,6 +17,12 @@
 
 <script>
 export default {
+  // authenticated: true,
+  // mounted () {
+  //   const { accessToken } = this.$store.state.oauth
+  //   console.log(accessToken);
+  // },
+
   async asyncData({ store, route, error}) {
     const data = await store.dispatch('ARTICLE_LIST')
     return {

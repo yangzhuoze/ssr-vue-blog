@@ -1,5 +1,9 @@
 module.exports = {
   env: {
+    SECRET_KEY: '-r7-anjc)h3*&#*1!ta3$t!w6ku%qr*zn%@@tj-au@4#@t7!-@',
+    OAUTH_HOST: 'http://127.0.0.1:8000/o',
+    OAUTH_CLIENT_ID: 'yJQCcIIlhlJ4zFSxgoHJ1h3T84kYP4vlaUokhwWl',
+    OAUTH_CLIENT_SECRET: 'xR5543TxhFFP3Gv3stwMv8CgipaqYF1es7cyAyHs93T6CDu31s4MiRquNuAVK6DQlnPjSasB9jNldenDmKF8loLYDx1dewIRZ0ui5yz4e49zN4lKhrPgvd9Dn2RiNasn'
   },
   /*
   ** Headers of the page
